@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Shefana M | Portfolio</title>
+<meta name="description" content="Portfolio of Shefana M, final-year B.Com student in Chennai. Finance, data analytics, data science, IT and business development, one portfolio.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#F7F5FF;
+  --surface:#FFFFFF;
+  --ink:#15123B;
+  --muted:#58557E;
+  --line:#E0DCF5;
+  --violet:#5B4BF0;
+  --on-violet:#FFFFFF;
+  --cyan:#0FB5CC;
+  --gold:#FFC53D;
+  --hero:#15123B;
+  --hero-ink:#F7F5FF;
+  --panel-a:#5B4BF0;
+  --display:"Plus Jakarta Sans","Segoe UI",system-ui,sans-serif;
+  --body:"Plus Jakarta Sans","Segoe UI",system-ui,sans-serif;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#0E0C27;--surface:#181540;--ink:#EEEBFF;--muted:#AAA7D2;--line:#2C2862;
+    --violet:#9187FF;--on-violet:#0E0C27;--cyan:#3CD0E4;--hero:#1B1850;--hero-ink:#F4F2FF;--panel-a:#3A2FB8;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#0E0C27;--surface:#181540;--ink:#EEEBFF;--muted:#AAA7D2;--line:#2C2862;
+  --violet:#9187FF;--on-violet:#0E0C27;--cyan:#3CD0E4;--hero:#1B1850;--hero-ink:#F4F2FF;--panel-a:#3A2FB8;
+  color-scheme:dark;
+}
+*,*::before,*::after{box-sizing:inherit}
+html{height:100%;scroll-behavior:smooth;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 70px)}
+body{margin:0;min-height:100%;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px;border-radius:6px}
+.wrap{width:100%;max-width:1120px;margin:0 auto;padding:0 24px}
+h1,h2,h3{font-family:var(--display);margin:0;letter-spacing:-.015em}
+
+/* top bar + lens switcher */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:30;background:var(--hero);color:var(--hero-ink);border-bottom:1px solid color-mix(in srgb,var(--hero-ink) 14%,transparent)}
+.top .wrap{display:flex;align-items:center;gap:18px;height:64px}
+.brand{font-family:var(--display);font-weight:800;font-size:18px;text-decoration:none;flex:0 0 auto}
+.lens-label{font-size:14px;opacity:.7;flex:0 0 auto}
+.lenses{display:flex;gap:8px;overflow-x:auto;flex:1 1 auto;padding:4px 2px;scrollbar-width:none}
+.lenses::-webkit-scrollbar{display:none}
+.lens{flex:0 0 auto;border:1.5px solid color-mix(in srgb,var(--hero-ink) 30%,transparent);background:transparent;color:var(--hero-ink);padding:7px 15px;border-radius:999px;font:500 14.5px var(--body);cursor:pointer;white-space:nowrap;transition:background .2s,color .2s,border-color .2s}
+.lens:hover{border-color:var(--gold)}
+.lens[aria-pressed="true"]{background:var(--gold);border-color:var(--gold);color:#15123B;font-weight:600}
+.theme{flex:0 0 auto;width:38px;height:38px;border-radius:50%;border:1.5px solid color-mix(in srgb,var(--hero-ink) 30%,transparent);background:transparent;color:var(--hero-ink);cursor:pointer;font-size:16px}
+.theme:hover{border-color:var(--gold)}
+
+/* hero */
+.hero{background:var(--hero);color:var(--hero-ink);padding:64px 0 88px;overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1.35fr 1fr;gap:48px;align-items:center}
+.hello{font-size:18px;opacity:.8;margin:0 0 6px}
+.hero h1{font-weight:800;font-size:clamp(54px,9vw,112px);line-height:1;letter-spacing:-.03em}
+.swap{transition:opacity .25s ease,transform .25s ease}
+.swap.out{opacity:0;transform:translateY(8px)}
+.headline{font-family:var(--display);font-weight:700;font-size:clamp(22px,3vw,32px);line-height:1.15;margin:26px 0 14px;max-width:24ch;color:var(--gold)}
+.summary{max-width:54ch;margin:0 0 26px;color:color-mix(in srgb,var(--hero-ink) 86%,transparent)}
+.cta{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-flex;align-items:center;padding:12px 22px;border-radius:12px;font:600 15.5px var(--body);text-decoration:none;cursor:pointer;border:2px solid var(--gold);background:var(--gold);color:#15123B}
+.btn:hover{filter:brightness(1.07)}
+.btn.ghost{background:transparent;color:inherit;border-color:color-mix(in srgb,currentColor 40%,transparent)}
+.btn.ghost:hover{border-color:currentColor;filter:none}
+
+.art{position:relative;aspect-ratio:1/1;max-width:420px;width:100%;justify-self:center}
+.art .c1{position:absolute;inset:6% 6% 14% 14%;border-radius:50%;background:var(--cyan);display:grid;place-items:center}
+.art .c1 span{font-family:var(--display);font-weight:800;font-size:clamp(70px,13vw,150px);letter-spacing:-.03em;color:#15123B;line-height:1}
+.art .c2{position:absolute;left:0;bottom:8%;width:30%;aspect-ratio:1/1;border-radius:50%;background:var(--gold)}
+.art .c3{position:absolute;right:0;top:0;width:24%;aspect-ratio:1/1;border-radius:50%;border:5px solid var(--violet)}
+.art .tag{position:absolute;right:0;bottom:0;max-width:78%;background:var(--surface);color:var(--ink);border-radius:14px;padding:12px 16px;font-size:14.5px;line-height:1.35;box-shadow:0 14px 30px -14px rgba(0,0,0,.5)}
+.art .tag b{display:block;font-family:var(--display);font-size:13px;color:var(--violet);margin-bottom:2px}
+
+/* sections */
+section{padding:84px 0 0}
+h2{font-weight:800;font-size:clamp(30px,4.4vw,46px);line-height:1.1;letter-spacing:-.025em;margin-bottom:14px}
+.lede{color:var(--muted);max-width:60ch;margin:0 0 36px}
+.count{font-weight:600;color:var(--violet)}
+
+/* about */
+.about{display:grid;grid-template-columns:1.2fr 1fr;gap:56px;align-items:start}
+.about p{margin:0 0 16px;max-width:60ch}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.stat{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:20px}
+.stat b{display:block;font-family:var(--display);font-weight:800;font-size:38px;line-height:1;letter-spacing:-.03em;color:var(--violet)}
+.stat span{display:block;margin-top:8px;color:var(--muted);font-size:14.5px;line-height:1.35}
+
+/* skills */
+.groups{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.group{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:22px}
+.group h3{font-size:19px;margin-bottom:14px}
+.group:nth-child(1) h3{color:var(--violet)}
+.group:nth-child(2) h3{color:var(--cyan)}
+.group:nth-child(3) h3{color:var(--ink)}
+.group:nth-child(4) h3{color:var(--muted)}
+.sk{display:flex;flex-wrap:wrap;gap:8px}
+.s{padding:5px 13px;border-radius:999px;border:1.5px solid var(--line);font-size:14.5px;font-weight:500;background:var(--paper);transition:opacity .3s,background .3s,color .3s,border-color .3s}
+.skills.lensed .s{opacity:.32}
+.skills.lensed .s.on{opacity:1;background:var(--violet);border-color:var(--violet);color:var(--on-violet);font-weight:600}
+
+/* projects */
+.panels{display:grid;gap:20px}
+.panel{border-radius:28px;padding:40px;display:grid;grid-template-columns:1.2fr 1fr;gap:36px;align-items:start}
+.panel.a{background:var(--panel-a);color:#fff}
+.panel.b{background:var(--gold);color:#15123B}
+.meta{font-size:14px;font-weight:600;opacity:.8;margin-bottom:10px}
+.panel h3{font-weight:800;font-size:clamp(24px,3vw,34px);line-height:1.15;letter-spacing:-.02em;margin-bottom:14px}
+.panel p{margin:0 0 14px;max-width:56ch}
+.angle{background:rgba(255,255,255,.14);border-radius:18px;padding:20px 22px}
+.panel.b .angle{background:rgba(21,18,59,.1)}
+.angle b{display:block;font-family:var(--display);font-size:14px;margin-bottom:6px}
+.angle p{margin:0}
+.feat{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+.feat span{padding:4px 12px;border-radius:999px;background:rgba(255,255,255,.18);font-size:14px;font-weight:500}
+
+/* experience */
+.tl{position:relative;margin-left:8px;padding-left:36px;border-left:3px solid var(--line);display:grid;gap:36px}
+.item{position:relative}
+.item::before{content:"";position:absolute;left:-47px;top:6px;width:18px;height:18px;border-radius:50%;background:var(--violet);border:4px solid var(--paper)}
+.item:nth-child(2)::before{background:var(--cyan)}
+.item .meta{color:var(--muted);opacity:1}
+.item h3{font-size:24px;font-weight:700;letter-spacing:-.015em;line-height:1.25}
+.org{margin:2px 0 12px;font-weight:600;color:var(--violet)}
+.item ul{margin:0;padding-left:20px;display:grid;gap:6px;max-width:64ch}
+.item p{margin:0 0 14px;max-width:64ch}
+.orgs{display:flex;flex-wrap:wrap;gap:10px}
+.orgs span{padding:8px 18px;border-radius:12px;background:var(--surface);border:1px solid var(--line);font-family:var(--display);font-weight:700;font-size:15px}
+
+/* credentials */
+.tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.tile{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:22px 22px 24px;border-top:6px solid var(--violet)}
+.tile:nth-child(3n+2){border-top-color:var(--cyan)}
+.tile:nth-child(3n){border-top-color:var(--gold)}
+.tile h3{font-size:18px;font-weight:700;line-height:1.25;margin-bottom:8px}
+.tile p{margin:0;color:var(--muted);font-size:15.5px}
+.edu{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:18px}
+.edu .box{border-radius:22px;padding:28px;background:var(--surface);border:1px solid var(--line);display:grid;grid-template-columns:auto 1fr;gap:22px;align-items:center}
+.edu .big{font-family:var(--display);font-weight:800;font-size:54px;letter-spacing:-.04em;line-height:1;color:var(--violet)}
+.edu .box:nth-child(2) .big{color:var(--cyan)}
+.edu h3{font-size:20px;font-weight:700;line-height:1.2}
+.edu p{margin:4px 0 0;color:var(--muted);font-size:15.5px}
+.edu .meta{margin:0 0 4px;color:var(--muted)}
+.more{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:18px}
+.more div{padding:24px 28px;border-radius:22px;border:2px dashed var(--line)}
+.more h3{font-size:20px;margin-bottom:6px}
+.more p{margin:0;color:var(--muted)}
+
+/* contact */
+.contact{margin-top:96px;background:var(--hero);color:var(--hero-ink);padding:80px 0 56px}
+.contact h2{max-width:16ch;font-size:clamp(38px,6.2vw,76px);line-height:1.05}
+.contact h2 em{font-style:normal;color:var(--gold)}
+.contact p{max-width:50ch;margin:0 0 30px;color:color-mix(in srgb,var(--hero-ink) 80%,transparent)}
+.contact small{display:block;margin-top:56px;opacity:.6;font-size:14px}
+.toast{align-self:center;font-size:14px;opacity:.85}
+
+@media (max-width:900px){
+  body{font-size:16px}
+  .hero{padding:40px 0 64px}
+  .hero .wrap,.about,.panel,.edu,.more{grid-template-columns:1fr}
+  .art{max-width:300px;justify-self:start}
+  .groups{grid-template-columns:1fr 1fr}
+  .tiles{grid-template-columns:1fr 1fr}
+  .panel{padding:28px;gap:20px}
+  .lens-label{display:none}
+  section{padding-top:64px}
+}
+@media (max-width:560px){
+  .wrap{padding:0 18px}
+  .groups,.tiles,.stats{grid-template-columns:1fr}
+  .edu .box{grid-template-columns:1fr;gap:10px}
+  .top .wrap{gap:10px}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.swap,.s,.lens{transition:none}}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#top">Shefana M</a>
+    <span class="lens-label" id="lensLabel">View me as</span>
+    <div class="lenses" id="lenses" role="group" aria-labelledby="lensLabel"></div>
+    <button class="theme" id="theme" type="button" aria-label="Switch colour theme">◐</button>
+  </div>
+</header>
+
+<main id="top">
+  <div class="hero">
+    <div class="wrap">
+      <div>
+        <p class="hello">Hi, I'm</p>
+        <h1>Shefana M</h1>
+        <div class="swap" id="heroText" aria-live="polite">
+          <p class="headline" id="headline"></p>
+          <p class="summary" id="summary"></p>
+        </div>
+        <div class="cta">
+          <a class="btn" href="mailto:shefana.m07@gmail.com">Email me</a>
+          <a class="btn ghost" href="#skills">See my skills</a>
+          <a class="btn ghost" href="https://www.linkedin.com/in/shefana2007" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+      </div>
+      <div class="art" aria-hidden="true">
+        <div class="c3"></div>
+        <div class="c1"><span>SM</span></div>
+        <div class="c2"></div>
+        <div class="tag swap" id="seekTag"><b>Open to</b><span id="seek"></span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <section id="about" style="padding-top:72px">
+      <div class="about">
+        <div>
+          <h2>One student, four directions</h2>
+          <p>I'm a final-year B.Com (General) student in Chennai. My foundation is commerce, and around it I've been building skills in data analysis, programming and business communication.</p>
+          <p>I've interned across accounting, finance and administration, built a working skill-exchange platform, presented FinTech research at a national seminar, and spent a semester visiting companies like Infosys and DHL through the Team Everest scholarship.</p>
+          <p>Use the buttons at the top to see this portfolio through the lens of the role you're hiring for.</p>
+        </div>
+        <div class="stats">
+          <div class="stat"><b>80%</b><span>in B.Com (General), 2024 to 2027</span></div>
+          <div class="stat"><b>8</b><span>weekend sessions at leading companies</span></div>
+          <div class="stat"><b>3</b><span>languages: Tamil, English, Arabic</span></div>
+          <div class="stat"><b>1</b><span>national seminar paper presented</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" class="skills" aria-labelledby="skillsH">
+      <h2 id="skillsH">Skills</h2>
+      <p class="lede" id="skillsLede"></p>
+      <div class="groups" id="groups"></div>
+    </section>
+
+    <section id="projects">
+      <h2>Projects and research</h2>
+      <p class="lede">One product I built and one paper I presented. The note in each card changes with the role you pick above.</p>
+      <div class="panels">
+        <article class="panel a">
+          <div>
+            <div class="meta">February 2026</div>
+            <h3>SWAPHUB, a skill-sharing network</h3>
+            <p>A website where people teach the skills they have and learn the ones they want, using a credit-based exchange instead of money.</p>
+            <p>A matching mechanism connects each learner with someone who can teach what they are looking for, and AI assistance offers personalised guidance.</p>
+            <div class="feat" aria-label="Core features">
+              <span>Registration &amp; profiles</span><span>Skill listings</span><span>Skill matching</span><span>Chat</span><span>Scheduling</span><span>Ratings &amp; feedback</span><span>AI assistance</span>
+            </div>
+          </div>
+          <div class="angle swap" id="angleA"><b>Through this lens</b><p id="angleAText"></p></div>
+        </article>
+        <article class="panel b">
+          <div>
+            <div class="meta">February 2025, National seminar</div>
+            <h3>Research presentation on FinTech</h3>
+            <p>Presented "Modernizing Finance: A Look at Latest FinTech Breakthroughs" at the National Seminar on FinTech and Technological Innovation.</p>
+            <p>Covered emerging FinTech solutions, how the technology is applied, and what customers need from financial services.</p>
+          </div>
+          <div class="angle swap" id="angleB"><b>Through this lens</b><p id="angleBText"></p></div>
+        </article>
+      </div>
+    </section>
+
+    <section id="experience">
+      <h2>Experience</h2>
+      <p class="lede">A hands-on internship and a semester inside working companies.</p>
+      <div class="tl">
+        <div class="item">
+          <div class="meta">June 2026, one week, Chennai</div>
+          <h3>Accounting &amp; Finance Intern</h3>
+          <div class="org">Audit Logic Solutions</div>
+          <ul>
+            <li>Worked across Accounting, Finance and Administration functions.</li>
+            <li>Gained practical exposure to accounting procedures, financial operations and business documentation.</li>
+            <li>Observed workflows, team coordination and workplace communication.</li>
+          </ul>
+        </div>
+        <div class="item">
+          <div class="meta">Semester-wise, Team Everest Scholarship</div>
+          <h3>Corporate Exposure Program</h3>
+          <div class="org">Team Everest</div>
+          <p>Selected through the scholarship to attend eight weekend learning sessions at leading organisations and see industry up close.</p>
+          <div class="orgs" aria-label="Organisations covered"><span>Innova</span><span>DHL</span><span>KLA</span><span>Infosys</span><span>Lennox</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="credentials">
+      <h2>Credentials and education</h2>
+      <p class="lede">Programmes completed, recognition earned, and where I study.</p>
+      <div class="tiles">
+        <div class="tile"><h3>Job Readiness Skills for Girls</h3><p>Programme by Team Everest, supported by Oracle.</p></div>
+        <div class="tile"><h3>Public Speaking Training</h3><p>Conducted by Team Everest.</p></div>
+        <div class="tile"><h3>AI Literacy Program</h3><p>Conducted by Team Everest.</p></div>
+        <div class="tile"><h3>Research paper presented</h3><p>National Seminar on FinTech and Technological Innovation.</p></div>
+        <div class="tile"><h3>Second place, InnoSTEAM</h3><p>Sopra Steria Project Innovation Competition (Walking Robot), Cluster Level Exhibition. A school-level achievement.</p></div>
+      </div>
+      <div class="edu">
+        <div class="box">
+          <div class="big">80%</div>
+          <div><div class="meta">2024 to 2027</div><h3>Bachelor of Commerce (General)</h3><p>Jeppiaar College of Arts &amp; Science, Chennai</p></div>
+        </div>
+        <div class="box">
+          <div class="big">76%</div>
+          <div><div class="meta">2023 to 2024</div><h3>Higher Secondary (HSC)</h3><p>Government Higher Secondary School, Thiruporur</p></div>
+        </div>
+      </div>
+      <div class="more">
+        <div><h3>Languages</h3><p>Tamil (native), English (reading, writing, understanding, basic speaking), Arabic (reading and writing).</p></div>
+        <div><h3>Beyond work</h3><p>Pencil sketching and henna art, which keep my eye for detail sharp. I'm always learning new technologies and communication skills.</p></div>
+      </div>
+    </section>
+  </div>
+
+  <footer class="contact" id="contact">
+    <div class="wrap">
+      <h2>Let's work <em>together</em></h2>
+      <p>I'm looking for internships and entry-level roles. Email is the quickest way to reach me.</p>
+      <div class="cta">
+        <a class="btn" href="mailto:shefana.m07@gmail.com">shefana.m07@gmail.com</a>
+        <button class="btn ghost" id="copy" type="button">Copy email</button>
+        <a class="btn ghost" href="tel:+918939346505">+91 89393 46505</a>
+        <a class="btn ghost" href="https://www.linkedin.com/in/shefana2007" target="_blank" rel="noopener">LinkedIn</a>
+        <span class="toast" id="toast" role="status" aria-live="polite"></span>
+      </div>
+      <small>Shefana M, Chennai, India</small>
+    </div>
+  </footer>
+</main>
+
+<script>
+(function(){
+  var LENSES = {
+    overview:{
+      name:"Overview",
+      headline:"Finance-minded, data-curious, tech-ready.",
+      summary:"Final-year B.Com student who pairs accounting and finance exposure with Python, SQL, Excel and Power BI. I built SWAPHUB, a credit-based skill-exchange platform with AI-assisted matching, and presented FinTech research at a national seminar.",
+      seek:"Internships and entry-level roles",
+      lede:"Everything I work with, grouped by type. Pick a role at the top and the skills that matter for it light up.",
+      a:"A complete product idea, from user accounts and matching to scheduling, ratings and AI help.",
+      b:"Research and public speaking on how technology is changing finance."
+    },
+    finance:{
+      name:"Finance",
+      headline:"Accounting-grounded, Excel-fast, ready for finance.",
+      summary:"Final-year B.Com student with hands-on exposure to accounting, finance and administration. I work in Excel, Power BI and SQL, prepare documents and slides in Word and PowerPoint, and present with confidence.",
+      seek:"Finance and accounting internships and entry-level roles",
+      lede:"For finance and accounting roles: accounting, Excel, Power BI, SQL, Word, PowerPoint and presentation skills.",
+      a:"Designed around a credit-based, non-monetary exchange system, where value moves between users as credits.",
+      b:"Researched emerging FinTech and how it applies in modern business and finance."
+    },
+    analyst:{
+      name:"Data Analyst",
+      headline:"Turning raw data into clear reports.",
+      summary:"Final-year B.Com student with practical knowledge of Python, SQL, Microsoft Excel and Power BI. I bring research, analytical problem-solving and a habit of presenting findings clearly, and I'm looking to build hands-on experience in analysis, visualisation and reporting.",
+      seek:"Data Analyst internship",
+      lede:"For data analyst roles: Python, SQL, Excel, Power BI, data cleaning, dashboards and reporting.",
+      a:"Built a skill-matching mechanism that connects learners with the people who can teach what they need.",
+      b:"Conducted market research and trend analysis on emerging FinTech solutions and customer needs."
+    },
+    science:{
+      name:"Data Science",
+      headline:"Building from analysis towards machine learning.",
+      summary:"Final-year B.Com student with practical knowledge of Python, SQL, Excel and Power BI, plus a basic grounding in Pandas and machine learning. I'm looking to apply analytical and problem-solving skills while gaining hands-on experience in data analysis and ML.",
+      seek:"Data Science internship",
+      lede:"For data science roles: Python, Pandas and ML basics, SQL, data cleaning and visualisation.",
+      a:"Integrated AI assistance that gives personalised guidance based on each user's learning and skill needs, alongside AI-based matching.",
+      b:"Studied how new financial technologies are built and applied, from data to customer outcomes."
+    },
+    it:{
+      name:"IT",
+      headline:"Technical foundations, proven by building a real platform.",
+      summary:"Final-year B.Com student with practical knowledge of Microsoft Excel, SQL, Python and Object-Oriented Programming. I developed SWAPHUB, a credit-based skill-exchange platform with AI-based matching, and I'm seeking internships and entry-level roles to apply analytical, technical and problem-solving skills.",
+      seek:"IT internships and entry-level roles",
+      lede:"For IT roles: Python, SQL, object-oriented programming, Excel and Power BI basics.",
+      a:"Built end-to-end features: registration, profiles, skill listings, matching, chat, scheduling, ratings and feedback.",
+      b:"Researched emerging financial technologies and their real-world applications."
+    },
+    business:{
+      name:"Business Development",
+      headline:"Relationships first: research, communicate, grow.",
+      summary:"Final-year B.Com student with practical exposure to business, finance, research and technology. I'm skilled in Excel, market research, communication and presentation, and I'm looking to develop skills in prospecting, partnerships, client communication and business growth.",
+      seek:"Business Development internship",
+      lede:"For business development roles: market research, communication, networking, CRM concepts, negotiation basics and presentation.",
+      a:"Structured the platform around user needs, relationship building, personalised matching and community engagement.",
+      b:"Did market research and trend analysis on FinTech solutions, technology applications and customer needs."
+    }
+  };
+  var ORDER = ["overview","finance","analyst","science","it","business"];
+
+  var SKILLS = [
+    {g:"Tools", items:[
+      ["Microsoft Excel","finance analyst science it business"],
+      ["Power BI","finance analyst science it"],
+      ["SQL","finance analyst science it business"],
+      ["Python","analyst science it business"],
+      ["Word","finance business"],
+      ["PowerPoint","finance business"],
+      ["Pandas (basics)","science"]
+    ]},
+    {g:"Data & tech", items:[
+      ["Data cleaning","analyst science"],
+      ["Data visualisation","analyst science"],
+      ["Dashboarding","analyst"],
+      ["Reporting","finance analyst"],
+      ["Machine learning (basics)","science"],
+      ["Object-oriented programming","it"]
+    ]},
+    {g:"Finance & business", items:[
+      ["Accounting","finance"],
+      ["Market research","finance analyst business"],
+      ["Basic CRM concepts","business"],
+      ["Negotiation (basics)","business"],
+      ["Networking","business"]
+    ]},
+    {g:"Working style", items:[
+      ["Presentation","finance analyst science business"],
+      ["Communication","it business"],
+      ["Problem solving","finance analyst science it business"],
+      ["Analytical thinking","finance analyst science business"],
+      ["Leadership","finance analyst science it business"],
+      ["Adaptability","finance analyst science it business"]
+    ]}
+  ];
+
+  var $ = function(id){ return document.getElementById(id); };
+  var lensBox = $("lenses"), groups = $("groups"), skillsSec = $("skills");
+  var current = "overview";
+
+  /* build pills */
+  ORDER.forEach(function(k){
+    var b = document.createElement("button");
+    b.type = "button"; b.className = "lens"; b.dataset.k = k;
+    b.textContent = LENSES[k].name;
+    b.setAttribute("aria-pressed", k === current ? "true" : "false");
+    b.addEventListener("click", function(){ setLens(k, true); });
+    lensBox.appendChild(b);
+  });
+
+  /* build skills */
+  SKILLS.forEach(function(grp){
+    var box = document.createElement("div"); box.className = "group";
+    var h = document.createElement("h3"); h.textContent = grp.g; box.appendChild(h);
+    var wrap = document.createElement("div"); wrap.className = "sk";
+    grp.items.forEach(function(it){
+      var s = document.createElement("span"); s.className = "s";
+      s.textContent = it[0]; s.dataset.l = it[1];
+      wrap.appendChild(s);
+    });
+    box.appendChild(wrap); groups.appendChild(box);
+  });
+
+  var swaps = ["heroText","seekTag","angleA","angleB"].map($);
+
+  function paint(k){
+    var L = LENSES[k];
+    $("headline").textContent = L.headline;
+    $("summary").textContent = L.summary;
+    $("seek").textContent = L.seek;
+    $("angleAText").textContent = L.a;
+    $("angleBText").textContent = L.b;
+    var matched = 0;
+    var chips = groups.querySelectorAll(".s");
+    Array.prototype.forEach.call(chips, function(c){
+      var on = k !== "overview" && c.dataset.l.split(" ").indexOf(k) > -1;
+      c.classList.toggle("on", on);
+      if(on) matched++;
+    });
+    skillsSec.classList.toggle("lensed", k !== "overview");
+    var lede = $("skillsLede");
+    lede.textContent = L.lede + (k !== "overview" ? " " : "");
+    if(k !== "overview"){
+      var n = document.createElement("span"); n.className = "count";
+      n.textContent = matched + " skills match this role.";
+      lede.appendChild(n);
+    }
+    Array.prototype.forEach.call(lensBox.children, function(b){
+      b.setAttribute("aria-pressed", b.dataset.k === k ? "true" : "false");
+    });
+  }
+
+  function setLens(k, animate){
+    if(k === current && animate) return;
+    current = k;
+    var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if(!animate || reduce){ paint(k); return; }
+    swaps.forEach(function(el){ el.classList.add("out"); });
+    setTimeout(function(){
+      paint(k);
+      swaps.forEach(function(el){ el.classList.remove("out"); });
+    }, 230);
+  }
+  paint(current);
+
+  /* theme */
+  var root = document.documentElement;
+  $("theme").addEventListener("click", function(){
+    var dark = root.getAttribute("data-theme") === "dark" ||
+      (!root.getAttribute("data-theme") && window.matchMedia("(prefers-color-scheme: dark)").matches);
+    root.setAttribute("data-theme", dark ? "light" : "dark");
+  });
+
+  /* copy email */
+  var toast = $("toast");
+  $("copy").addEventListener("click", function(){
+    var email = "shefana.m07@gmail.com";
+    function done(m){ toast.textContent = m; setTimeout(function(){ toast.textContent = ""; }, 2500); }
+    try{
+      navigator.clipboard.writeText(email).then(function(){ done("Email copied"); }, function(){ done(email); });
+    }catch(e){ done(email); }
+  });
+})();
+</script>
+</body>
+</html>
